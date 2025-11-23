@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern eCommerce website for quality products">
+    <title>eCommerce Store - Home</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <p class="header-info">Welcome to our eCommerce store!</p>
+                    <div class="header-links">
+                        <a href="#" class="header-link">Track Order</a>
+                        <a href="#" class="header-link">Help</a>
+                        <a href="#" class="header-link">Language: EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>eShop</h1>
+                        </a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search for products...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <!-- Header Actions -->
+                    <div class="header-actions">
+                        <a href="account.html" class="header-action" id="accountLink">
+                            <i class="far fa-user"></i>
+                            <span id="accountText">Account</span>
+                        </a>
+                        <a href="wishlist.html" class="header-action">
+                            <i class="far fa-heart"></i>
+                            <span>Wishlist</span>
+                            <span class="badge">0</span>
+                        </a>
+                        <a href="cart.html" class="header-action">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Cart</span>
+                            <span class="badge">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Categories <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html?category=electronics">Electronics</a></li>
+                            <li><a href="products.html?category=fashion">Fashion</a></li>
+                            <li><a href="products.html?category=home">Home & Living</a></li>
+                            <li><a href="products.html?category=sports">Sports & Outdoors</a></li>
+                            <li><a href="products.html?category=books">Books</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="hero-badge">New Collection</span>
+                        <h1 class="hero-title">Discover Amazing Products</h1>
+                        <p class="hero-description">Shop the latest trends in electronics, fashion, and home essentials. Get up to 50% off on selected items!</p>
+                        <div class="hero-buttons">
+                            <a href="products.html" class="btn btn-primary">Shop Now</a>
+                            <a href="#featured" class="btn btn-secondary">View Deals</a>
+                        </div>
+                        <div class="hero-features">
+                            <div class="hero-feature">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>Free Shipping</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="fas fa-undo"></i>
+                                <span>Easy Returns</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure Payment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" alt="Shopping" loading="lazy">
+                        <div class="hero-badge-float">
+                            <span class="badge-text">50% OFF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Shop by Category</h2>
+                    <p class="section-subtitle">Browse our popular categories</p>
+                </div>
+                <div class="categories-grid">
+                    <a href="products.html?category=electronics" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 class="category-name">Electronics</h3>
+                        <p class="category-count">12+ Products</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="products.html?category=fashion" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="category-name">Fashion</h3>
+                        <p class="category-count">10+ Products</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="products.html?category=home" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="category-name">Home & Living</h3>
+                        <p class="category-count">8+ Products</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="products.html?category=sports" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 class="category-name">Sports</h3>
+                        <p class="category-count">6+ Products</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="products.html?category=books" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="category-name">Books</h3>
+                        <p class="category-count">6+ Products</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-section" id="featured">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-subtitle">Check out our best selling products</p>
+                    <a href="products.html" class="view-all-btn">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid-home">
+                    <!-- Product 1 -->
+                    <div class="product-card-home">
+                        <div class="product-image-home">
+                            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&h=400&fit=crop" alt="Wireless Headphones" loading="lazy">
+                            <span class="product-badge-home sale">Sale</span>
+                            <button class="wishlist-btn-home"><i class="far fa-heart"></i></button>
+                            <div class="product-overlay">
+                                <button class="quick-view-btn">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info-home">
+                            <span class="product-category-home">Electronics</span>
+                            <h3 class="product-title-home">Premium Wireless Headphones</h3>
+                            <div class="product-rating-home">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5)</span>
+                            </div>
+                            <div class="product-price-home">
+                                <span class="current-price-home">$89.99</span>
+                                <span class="original-price-home">$129.99</span>
+                            </div>
+                            <button class="add-to-cart-btn-home">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card-home">
+                        <div class="product-image-home">
+                            <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop" alt="Smart Watch" loading="lazy">
+                            <span class="product-badge-home hot">Hot</span>
+                            <button class="wishlist-btn-home"><i class="far fa-heart"></i></button>
+                            <div class="product-overlay">
+                                <button class="quick-view-btn">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info-home">
+                            <span class="product-category-home">Electronics</span>
+                            <h3 class="product-title-home">Smart Watch Pro</h3>
+                            <div class="product-rating-home">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <div class="product-price-home">
+                                <span class="current-price-home">$199.99</span>
+                                <span class="original-price-home">$299.99</span>
+                            </div>
+                            <button class="add-to-cart-btn-home">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card-home">
+                        <div class="product-image-home">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=400&fit=crop" alt="Sneakers" loading="lazy">
+                            <span class="product-badge-home new">New</span>
+                            <button class="wishlist-btn-home"><i class="far fa-heart"></i></button>
+                            <div class="product-overlay">
+                                <button class="quick-view-btn">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info-home">
+                            <span class="product-category-home">Fashion</span>
+                            <h3 class="product-title-home">Premium White Sneakers</h3>
+                            <div class="product-rating-home">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price-home">
+                                <span class="current-price-home">$89.99</span>
+                            </div>
+                            <button class="add-to-cart-btn-home">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card-home">
+                        <div class="product-image-home">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Headphones" loading="lazy">
+                            <button class="wishlist-btn-home"><i class="far fa-heart"></i></button>
+                            <div class="product-overlay">
+                                <button class="quick-view-btn">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info-home">
+                            <span class="product-category-home">Electronics</span>
+                            <h3 class="product-title-home">Portable Bluetooth Speaker</h3>
+                            <div class="product-rating-home">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="product-price-home">
+                                <span class="current-price-home">$49.99</span>
+                            </div>
+                            <button class="add-to-cart-btn-home">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Banner Section -->
+        <section class="promo-banner">
+            <div class="container">
+                <div class="promo-content">
+                    <div class="promo-text">
+                        <h2>Limited Time Offer!</h2>
+                        <p>Get up to 50% off on selected electronics. Hurry, offer ends soon!</p>
+                        <a href="products.html?category=electronics" class="btn btn-light">Shop Electronics</a>
+                    </div>
+                    <div class="promo-image">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&h=400&fit=crop" alt="Electronics Sale" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 class="benefit-title">Free Shipping</h3>
+                        <p class="benefit-text">Free delivery on orders over $50</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="benefit-title">24/7 Support</h3>
+                        <p class="benefit-text">Get help whenever you need it</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="benefit-title">Secure Payment</h3>
+                        <p class="benefit-text">100% secure transactions</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3 class="benefit-title">Easy Returns</h3>
+                        <p class="benefit-text">30-day return policy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Products Section -->
+        <section class="trending-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Trending Now</h2>
+                    <p class="section-subtitle">Most popular items this week</p>
+                </div>
+                <div class="trending-grid">
+                    <div class="trending-card">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" alt="Watches" loading="lazy">
+                        <div class="trending-overlay">
+                            <h3>Luxury Watches</h3>
+                            <a href="products.html?category=fashion" class="trending-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=300&h=300&fit=crop" alt="Fitness" loading="lazy">
+                        <div class="trending-overlay">
+                            <h3>Fitness Gear</h3>
+                            <a href="products.html?category=sports" class="trending-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&h=300&fit=crop" alt="Home Decor" loading="lazy">
+                        <div class="trending-overlay">
+                            <h3>Home Decor</h3>
+                            <a href="products.html?category=home" class="trending-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to Our Newsletter</h2>
+                        <p>Get the latest updates on new products and upcoming sales</p>
+                    </div>
+                    <form class="newsletter-form-home">
+                        <input type="email" placeholder="Enter your email address" class="newsletter-input-home" required>
+                        <button type="submit" class="newsletter-btn-home">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-col">
+                        <h3 class="footer-title">eShop</h3>
+                        <p class="footer-text">
+                            Your trusted online shopping destination for quality products at competitive prices.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="return-policy.html">Return Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Customer Service -->
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Customer Service</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="products.html?category=electronics">Electronics</a></li>
+                            <li><a href="products.html?category=fashion">Fashion</a></li>
+                            <li><a href="products.html?category=home">Home & Living</a></li>
+                            <li><a href="products.html?category=sports">Sports & Outdoors</a></li>
+                            <li><a href="products.html?category=books">Books</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Newsletter</h4>
+                        <p class="footer-text">Subscribe to get special offers and updates</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                        <div class="payment-methods">
+                            <h5>We Accept</h5>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-paypal"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 eShop. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/user-session.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

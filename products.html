@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our wide range of products">
+    <title>Products - eCommerce Store</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/products.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section (Same as index.html) -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <p class="header-info">Welcome to our eCommerce store!</p>
+                    <div class="header-links">
+                        <a href="#" class="header-link">Track Order</a>
+                        <a href="#" class="header-link">Help</a>
+                        <a href="#" class="header-link">Language: EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>eShop</h1>
+                        </a>
+                    </div>
+
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search for products...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <div class="header-actions">
+                        <a href="account.html" class="header-action">
+                            <i class="far fa-user"></i>
+                            <span>Account</span>
+                        </a>
+                        <a href="wishlist.html" class="header-action">
+                            <i class="far fa-heart"></i>
+                            <span>Wishlist</span>
+                            <span class="badge">0</span>
+                        </a>
+                        <a href="cart.html" class="header-action">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Cart</span>
+                            <span class="badge">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Categories <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html?category=electronics">Electronics</a></li>
+                            <li><a href="products.html?category=fashion">Fashion</a></li>
+                            <li><a href="products.html?category=home">Home & Living</a></li>
+                            <li><a href="products.html?category=sports">Sports & Outdoors</a></li>
+                            <li><a href="products.html?category=books">Books</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link active">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Our Products</h1>
+                <p class="page-description">Discover our wide selection of quality products</p>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select class="filter-select" name="category" id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Living</option>
+                        <option value="sports">Sports & Outdoors</option>
+                        <option value="books">Books</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select class="filter-select" name="sort" id="sort-filter">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <!-- Electronics Products -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&h=400&fit=crop" alt="Wireless Headphones">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">Premium Wireless Headphones</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                            <span class="original-price">$129.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop" alt="Smart Watch">
+                        <span class="product-badge sale">Sale</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">Smart Watch Pro</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199.99</span>
+                            <span class="original-price">$299.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop" alt="Wireless Mouse">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">Ergonomic Wireless Mouse</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=400&h=400&fit=crop" alt="Smartwatch Fitness Tracker">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">Fitness Tracker Watch</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop" alt="Portable Speaker">
+                        <span class="product-badge">Hot</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">Portable Bluetooth Speaker</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Fashion Products -->
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=400&h=400&fit=crop" alt="Denim Jacket">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Classic Denim Jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.2)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$59.99</span>
+                            <span class="original-price">$89.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=400&fit=crop" alt="Sneakers">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Premium White Sneakers</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop" alt="Sunglasses">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Classic Aviator Sunglasses</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$34.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=400&h=400&fit=crop" alt="Backpack">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Travel Backpack</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$44.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" alt="Wrist Watch">
+                        <span class="product-badge sale">Sale</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Luxury Analog Watch</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$149.99</span>
+                            <span class="original-price">$249.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Home & Living Products -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=400&fit=crop" alt="Table Lamp">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Modern Table Lamp</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.3)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=400&h=400&fit=crop" alt="Throw Pillows">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Decorative Throw Pillow Set</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400&h=400&fit=crop" alt="Coffee Maker">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Automatic Coffee Maker</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1582737384865-330e8c7f95e1?w=400&h=400&fit=crop" alt="Wall Art">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Abstract Canvas Wall Art</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$54.99</span>
+                            <span class="original-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=400&h=400&fit=crop" alt="Succulent Plants">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Mini Succulent Plant Set</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$19.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Sports & Outdoors Products -->
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400&h=400&fit=crop" alt="Yoga Mat">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Premium Yoga Mat</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$34.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop" alt="Water Bottle">
+                        <span class="product-badge">Hot</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Insulated Water Bottle</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1517836477839-7072aaa8b121?w=400&h=400&fit=crop" alt="Dumbbell Set">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Adjustable Dumbbell Set</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.4)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$129.99</span>
+                            <span class="original-price">$179.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&h=400&fit=crop" alt="Camping Tent">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">4-Person Camping Tent</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$159.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=400&h=400&fit=crop" alt="Basketball">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Professional Basketball</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Books Products -->
+                <div class="product-card" data-category="books">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=400&fit=crop" alt="Book Collection">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Books</span>
+                        <h3 class="product-title">Classic Literature Collection</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="books">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&h=400&fit=crop" alt="Programming Book">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Books</span>
+                        <h3 class="product-title">Modern Web Development Guide</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="books">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=400&fit=crop" alt="Self Help Book">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Books</span>
+                        <h3 class="product-title">Mindfulness & Success</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="books">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=400&h=400&fit=crop" alt="Cookbook">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Books</span>
+                        <h3 class="product-title">Gourmet Cooking Masterclass</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$34.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="books">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&h=400&fit=crop" alt="Art Book">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Books</span>
+                        <h3 class="product-title">Digital Photography Essentials</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.3)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$44.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Electronics Products -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=400&h=400&fit=crop" alt="Mechanical Keyboard">
+                        <span class="product-badge">Hot</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">RGB Mechanical Keyboard</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$129.99</span>
+                            <span class="original-price">$159.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1608233381719-4818f562fb5f?w=400&h=400&fit=crop" alt="Webcam">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">HD Webcam with Microphone</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.4)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$69.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Fashion Products -->
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1624222247344-550fb60583bb?w=400&h=400&fit=crop" alt="Leather Belt">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Genuine Leather Belt</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop" alt="Handbag">
+                        <span class="product-badge sale">Sale</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Designer Leather Handbag</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$119.99</span>
+                            <span class="original-price">$189.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Home & Living Products -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=400&h=400&fit=crop" alt="Aromatherapy Diffuser">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Aromatherapy Essential Oil Diffuser</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$34.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1615800098779-1be32e60cca3?w=400&h=400&fit=crop" alt="Bed Sheets">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Luxury Cotton Bed Sheet Set</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$59.99</span>
+                            <span class="original-price">$89.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Sports Products -->
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop" alt="Running Shoes">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Performance Running Shoes</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$109.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=400&fit=crop" alt="Resistance Bands">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Resistance Bands Set</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$19.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Electronics -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585790050230-5dd28404f905?w=400&h=400&fit=crop" alt="Tablet">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">10-inch Android Tablet</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$249.99</span>
+                            <span class="original-price">$329.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=400&fit=crop" alt="Power Bank">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">20000mAh Power Bank</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Fashion -->
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=400&h=400&fit=crop" alt="Winter Scarf">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Cashmere Winter Scarf</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=400&fit=crop" alt="Red Sneakers">
+                        <span class="product-badge sale">Sale</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3 class="product-title">Classic Red Running Shoes</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.4)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$69.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Home & Living -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=400&h=400&fit=crop" alt="Smart Thermostat">
+                        <span class="product-badge">Hot</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">Smart WiFi Thermostat</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$149.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=400&h=400&fit=crop" alt="Kitchen Blender">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home & Living</span>
+                        <h3 class="product-title">High-Speed Kitchen Blender</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                            <span class="original-price">$129.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Sports Products -->
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=400&h=400&fit=crop" alt="Bicycle">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Mountain Bike 21-Speed</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$399.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1519315901367-c5c6e6c3f36c?w=400&h=400&fit=crop" alt="Swim Goggles">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports & Outdoors</span>
+                        <h3 class="product-title">Professional Swim Goggles</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Additional Books -->
+                <div class="product-card" data-category="books">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551135049-8a33b5883817?w=400&h=400&fit=crop" alt="Business Book">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Books</span>
+                        <h3 class="product-title">Entrepreneurship Essentials</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="books">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=400&fit=crop" alt="Fiction Novel">
+                        <span class="product-badge">Hot</span>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Books</span>
+                        <h3 class="product-title">Bestselling Mystery Novel</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$19.99</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section (Same as index.html) -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 class="footer-title">eShop</h3>
+                        <p class="footer-text">
+                            Your trusted online shopping destination for quality products at competitive prices.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Customer Service</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="products.html?category=electronics">Electronics</a></li>
+                            <li><a href="products.html?category=fashion">Fashion</a></li>
+                            <li><a href="products.html?category=home">Home & Living</a></li>
+                            <li><a href="products.html?category=sports">Sports & Outdoors</a></li>
+                            <li><a href="products.html?category=books">Books</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Newsletter</h4>
+                        <p class="footer-text">Subscribe to get special offers and updates</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                        <div class="payment-methods">
+                            <h5>We Accept</h5>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-paypal"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 eShop. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/user-session.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

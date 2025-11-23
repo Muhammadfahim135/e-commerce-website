@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Setup - eShop">
+    <title>Admin Setup - eShop</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .setup-container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 50px 40px;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .setup-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .setup-icon i {
+            font-size: 40px;
+            color: white;
+        }
+
+        .setup-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .setup-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border-left: 4px solid #dc2626;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            color: #16a34a;
+            border-left: 4px solid #16a34a;
+        }
+
+        .alert-info {
+            background: #eff6ff;
+            color: #0066ff;
+            border-left: 4px solid #0066ff;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px 14px 48px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #94a3b8;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #667eea;
+        }
+
+        .password-strength {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .strength-bar {
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .strength-fill {
+            height: 100%;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .strength-text {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .password-requirements {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+
+        .requirement {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: #64748b;
+        }
+
+        .requirement:last-child {
+            margin-bottom: 0;
+        }
+
+        .requirement i {
+            width: 16px;
+        }
+
+        .requirement.met {
+            color: #10b981;
+        }
+
+        .requirement.met i {
+            color: #10b981;
+        }
+
+        .setup-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .setup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .setup-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .action-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .action-link {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .action-link:hover {
+            color: #764ba2;
+        }
+
+        .security-note {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .security-note i {
+            color: #667eea;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-container">
+        <div class="setup-icon">
+            <i class="fas fa-key"></i>
+        </div>
+        
+        <h1 class="setup-title">Admin Password Setup</h1>
+        <p class="setup-subtitle">Create or reset your admin password</p>
+
+        <div id="alert" class="alert"></div>
+
+        <form id="setupForm" onsubmit="handleSetup(event)">
+            <div class="form-group">
+                <label for="username">Admin Username</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="username" value="admin" required readonly>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="newPassword">New Password *</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="newPassword" required oninput="checkPasswordStrength()">
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('newPassword', this)"></i>
+                </div>
+                <div class="password-strength" id="passwordStrength">
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <div class="strength-text" id="strengthText"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password *</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" required oninput="checkPasswordMatch()">
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+            </div>
+
+            <div class="password-requirements">
+                <div class="requirement" id="req-length">
+                    <i class="far fa-circle"></i>
+                    <span>At least 8 characters</span>
+                </div>
+                <div class="requirement" id="req-upper">
+                    <i class="far fa-circle"></i>
+                    <span>One uppercase letter</span>
+                </div>
+                <div class="requirement" id="req-lower">
+                    <i class="far fa-circle"></i>
+                    <span>One lowercase letter</span>
+                </div>
+                <div class="requirement" id="req-number">
+                    <i class="far fa-circle"></i>
+                    <span>One number</span>
+                </div>
+            </div>
+
+            <button type="submit" class="setup-btn" id="setupBtn">
+                <i class="fas fa-check"></i> Set Password
+            </button>
+        </form>
+
+        <div class="action-links">
+            <a href="admin-login.html" class="action-link">
+                <i class="fas fa-arrow-left"></i> Back to Login
+            </a>
+            <a href="home.html" class="action-link">
+                Go to Store <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="security-note">
+            <i class="fas fa-shield-alt"></i>
+            Your password will be securely stored in your browser
+        </div>
+    </div>
+
+    <script>
+        let passwordValid = false;
+        let passwordsMatch = false;
+
+        function checkPasswordStrength() {
+            const password = document.getElementById('newPassword').value;
+            const strengthDiv = document.getElementById('passwordStrength');
+            const strengthFill = document.getElementById('strengthFill');
+            const strengthText = document.getElementById('strengthText');
+            
+            if (!password) {
+                strengthDiv.style.display = 'none';
+                return;
+            }
+
+            strengthDiv.style.display = 'block';
+
+            let strength = 0;
+            let strengthLabel = '';
+            let strengthColor = '';
+
+            // Check requirements
+            const hasLength = password.length >= 8;
+            const hasUpper = /[A-Z]/.test(password);
+            const hasLower = /[a-z]/.test(password);
+            const hasNumber = /[0-9]/.test(password);
+            const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+            // Update requirement indicators
+            updateRequirement('req-length', hasLength);
+            updateRequirement('req-upper', hasUpper);
+            updateRequirement('req-lower', hasLower);
+            updateRequirement('req-number', hasNumber);
+
+            // Calculate strength
+            if (hasLength) strength++;
+            if (hasUpper) strength++;
+            if (hasLower) strength++;
+            if (hasNumber) strength++;
+            if (hasSpecial) strength++;
+
+            // Set strength level
+            if (strength <= 2) {
+                strengthLabel = 'Weak';
+                strengthColor = '#ef4444';
+                passwordValid = false;
+            } else if (strength === 3) {
+                strengthLabel = 'Fair';
+                strengthColor = '#f59e0b';
+                passwordValid = false;
+            } else if (strength === 4) {
+                strengthLabel = 'Good';
+                strengthColor = '#10b981';
+                passwordValid = hasLength && hasUpper && hasLower && hasNumber;
+            } else {
+                strengthLabel = 'Strong';
+                strengthColor = '#059669';
+                passwordValid = true;
+            }
+
+            strengthFill.style.width = (strength * 20) + '%';
+            strengthFill.style.background = strengthColor;
+            strengthText.textContent = strengthLabel;
+            strengthText.style.color = strengthColor;
+
+            checkPasswordMatch();
+            updateButtonState();
+        }
+
+        function updateRequirement(id, met) {
+            const req = document.getElementById(id);
+            const icon = req.querySelector('i');
+            
+            if (met) {
+                req.classList.add('met');
+                icon.classList.remove('far', 'fa-circle');
+                icon.classList.add('fas', 'fa-check-circle');
+            } else {
+                req.classList.remove('met');
+                icon.classList.remove('fas', 'fa-check-circle');
+                icon.classList.add('far', 'fa-circle');
+            }
+        }
+
+        function checkPasswordMatch() {
+            const password = document.getElementById('newPassword').value;
+            const confirm = document.getElementById('confirmPassword').value;
+            
+            if (!confirm) {
+                passwordsMatch = false;
+                updateButtonState();
+                return;
+            }
+
+            passwordsMatch = password === confirm;
+            
+            const confirmInput = document.getElementById('confirmPassword');
+            if (passwordsMatch) {
+                confirmInput.style.borderColor = '#10b981';
+            } else {
+                confirmInput.style.borderColor = '#ef4444';
+            }
+
+            updateButtonState();
+        }
+
+        function updateButtonState() {
+            const btn = document.getElementById('setupBtn');
+            const password = document.getElementById('newPassword').value;
+            const hasMinReqs = password.length >= 8 && 
+                              /[A-Z]/.test(password) && 
+                              /[a-z]/.test(password) && 
+                              /[0-9]/.test(password);
+            
+            btn.disabled = !(hasMinReqs && passwordsMatch);
+        }
+
+        function togglePassword(inputId, icon) {
+            const passwordInput = document.getElementById(inputId);
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        function handleSetup(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('newPassword').value;
+            const confirm = document.getElementById('confirmPassword').value;
+            const alert = document.getElementById('alert');
+
+            // Final validation
+            if (password !== confirm) {
+                showAlert('Passwords do not match!', 'error');
+                return;
+            }
+
+            if (password.length < 8) {
+                showAlert('Password must be at least 8 characters long!', 'error');
+                return;
+            }
+
+            if (!/[A-Z]/.test(password)) {
+                showAlert('Password must contain at least one uppercase letter!', 'error');
+                return;
+            }
+
+            if (!/[a-z]/.test(password)) {
+                showAlert('Password must contain at least one lowercase letter!', 'error');
+                return;
+            }
+
+            if (!/[0-9]/.test(password)) {
+                showAlert('Password must contain at least one number!', 'error');
+                return;
+            }
+
+            // Save password to localStorage
+            const adminCredentials = {
+                username: 'admin',
+                password: password,
+                setupDate: new Date().toISOString()
+            };
+
+            localStorage.setItem('adminCredentials', JSON.stringify(adminCredentials));
+
+            // Show success message
+            showAlert('Password set successfully! Redirecting to login...', 'success');
+
+            // Redirect to login
+            setTimeout(() => {
+                window.location.href = 'admin-login.html';
+            }, 2000);
+        }
+
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert alert-${type}`;
+            alert.style.display = 'block';
+
+            if (type === 'error') {
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 4000);
+            }
+        }
+
+        // Check if password already exists
+        window.addEventListener('DOMContentLoaded', function() {
+            const existingCreds = localStorage.getItem('adminCredentials');
+            if (existingCreds) {
+                showAlert('You already have a password set. You can reset it here.', 'info');
+            }
+        });
+    </script>
+</body>
+</html>

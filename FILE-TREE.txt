@@ -1,0 +1,35 @@
+Folder PATH listing
+Volume serial number is 003F-4E9B
+C:\USERS\MUHAM\ONEDRIVE\DESKTOP\ECOMMERCE-FRONTEND-DESIGN
+ª   .gitignore
+ª   FILE-TREE.txt
+ª   GETTING-STARTED.md
+ª   GITHUB-SETUP.md
+ª   index.html
+ª   NOTES.md
+ª   product-detail.html
+ª   products.html
+ª   PROJECT-SUMMARY.md
+ª   QUICK-REFERENCE.md
+ª   README.md
+ª   TIMELINE.md
+ª   welcome.html
+ª   
++---assets
+ª   ª   README.md
+ª   ª   
+ª   +---icons
+ª   +---images
++---css
+ª       footer.css
+ª       header.css
+ª       product-detail.css
+ª       products.css
+ª       reset.css
+ª       styles.css
+ª       variables.css
+ª       
++---js
+        main.js
+        product-detail.js
+        

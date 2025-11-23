@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to eShop - Login or Signup</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 12s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 14s; }
+
+        .landing-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Left side - Branding */
+        .landing-left {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .landing-left::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .brand-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-large {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-large i {
+            font-size: 56px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 15px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            opacity: 0.9;
+            animation: fadeInLeft 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .features-list li:nth-child(1) { animation-delay: 0.2s; }
+        .features-list li:nth-child(2) { animation-delay: 0.4s; }
+        .features-list li:nth-child(3) { animation-delay: 0.6s; }
+        .features-list li:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 0.9;
+                transform: translateX(0);
+            }
+        }
+
+        .features-list li i {
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        /* Right side - Actions */
+        .landing-right {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .welcome-subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .auth-options {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 18px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .auth-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .auth-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-signup {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-login {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-login:hover {
+            background: #f9fafb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        .guest-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .guest-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .guest-link a:hover {
+            color: #764ba2;
+            gap: 12px;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .landing-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .landing-left {
+                display: none;
+            }
+
+            .landing-right {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-heading {
+                font-size: 28px;
+            }
+
+            .auth-btn {
+                padding: 16px 24px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Landing Container -->
+    <div class="landing-container">
+        <!-- Left Side - Branding -->
+        <div class="landing-left">
+            <div class="brand-content">
+                <div class="logo-large">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>eShop</span>
+                </div>
+                <p class="tagline">Your Ultimate Shopping Destination</p>
+
+                <ul class="features-list">
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>10,000+ Premium Products</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-truck"></i>
+                        <span>Fast & Free Delivery</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Payment Options</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Customer Support</span>
+                    </li>
+                </ul>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9/5</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Auth Options -->
+        <div class="landing-right">
+            <h1 class="welcome-heading">Welcome to eShop!</h1>
+            <p class="welcome-subtitle">Sign up or login to start shopping</p>
+
+            <div class="auth-options">
+                <a href="signup-vibrant.html" class="auth-btn btn-signup">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Create New Account</span>
+                </a>
+
+                <div class="divider">or</div>
+
+                <a href="login-vibrant.html" class="auth-btn btn-login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login to Your Account</span>
+                </a>
+            </div>
+
+            <div class="guest-link">
+                <a href="home.html" id="continueAsGuest">
+                    <span>Continue as Guest</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            
+            if (currentUser) {
+                // User is already logged in, redirect to home
+                window.location.href = 'home.html';
+            }
+        });
+
+        // Handle guest access
+        document.getElementById('continueAsGuest').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Set guest flag
+            sessionStorage.setItem('guestMode', 'true');
+            
+            // Redirect to home
+            window.location.href = 'home.html';
+        });
+    </script>
+</body>
+</html>

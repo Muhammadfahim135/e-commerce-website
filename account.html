@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Account - eShop">
+    <title>My Account - eShop</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .account-page {
+            min-height: 100vh;
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .account-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .account-header {
+            background: linear-gradient(135deg, #0066ff, #6366f1);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            color: white;
+        }
+
+        .account-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .account-header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .account-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+        }
+
+        .account-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            height: fit-content;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .account-menu {
+            list-style: none;
+        }
+
+        .account-menu-item {
+            margin-bottom: 5px;
+        }
+
+        .account-menu-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            color: #64748b;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .account-menu-link:hover,
+        .account-menu-link.active {
+            background: #f1f5f9;
+            color: #0066ff;
+        }
+
+        .account-menu-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .account-content {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .profile-section {
+            display: none;
+        }
+
+        .profile-section.active {
+            display: block;
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid #0066ff;
+        }
+
+        .info-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .order-card {
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0066ff;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .order-id {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 16px;
+        }
+
+        .order-status {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-delivered {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-shipped {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .order-details {
+            display: flex;
+            justify-content: space-between;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .btn-edit {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #0066ff, #6366f1);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-edit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #1e293b;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+            box-shadow: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            color: #0066ff;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            width: 100%;
+            padding: 15px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #dc2626;
+        }
+
+        @media (max-width: 968px) {
+            .account-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <p class="header-info">Welcome to our eCommerce store!</p>
+                    <div class="header-links">
+                        <a href="#" class="header-link">Track Order</a>
+                        <a href="#" class="header-link">Help</a>
+                        <a href="#" class="header-link">Language: EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="home.html">
+                            <h1>eShop</h1>
+                        </a>
+                    </div>
+
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search for products...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <div class="header-actions">
+                        <a href="account.html" class="header-action" id="accountLink">
+                            <i class="far fa-user"></i>
+                            <span id="accountText">Account</span>
+                        </a>
+                        <a href="wishlist.html" class="header-action">
+                            <i class="far fa-heart"></i>
+                            <span>Wishlist</span>
+                            <span class="badge">0</span>
+                        </a>
+                        <a href="cart.html" class="header-action">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Cart</span>
+                            <span class="badge">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Categories <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html?category=electronics">Electronics</a></li>
+                            <li><a href="products.html?category=fashion">Fashion</a></li>
+                            <li><a href="products.html?category=home">Home & Living</a></li>
+                            <li><a href="products.html?category=sports">Sports & Outdoors</a></li>
+                            <li><a href="products.html?category=books">Books</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Account Page -->
+    <div class="account-page">
+        <div class="account-container">
+            <div class="account-header">
+                <h1><i class="fas fa-user-circle"></i> My Account</h1>
+                <p id="welcome-message">Welcome back!</p>
+            </div>
+
+            <div class="account-grid">
+                <aside class="account-sidebar">
+                    <ul class="account-menu">
+                        <li class="account-menu-item">
+                            <a href="#" class="account-menu-link active" data-section="dashboard">
+                                <i class="fas fa-th-large"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="account-menu-item">
+                            <a href="#" class="account-menu-link" data-section="profile">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                        <li class="account-menu-item">
+                            <a href="#" class="account-menu-link" data-section="orders">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>My Orders</span>
+                            </a>
+                        </li>
+                        <li class="account-menu-item">
+                            <a href="wishlist.html" class="account-menu-link">
+                                <i class="fas fa-heart"></i>
+                                <span>Wishlist</span>
+                            </a>
+                        </li>
+                        <li class="account-menu-item">
+                            <a href="#" class="account-menu-link" data-section="settings">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </aside>
+
+                <main class="account-content">
+                    <!-- Dashboard Section -->
+                    <section id="dashboard" class="profile-section active">
+                        <h2 class="section-title">Dashboard</h2>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="stat-value" id="total-orders">0</div>
+                                <div class="stat-label">Total Orders</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="stat-value" id="wishlist-items">0</div>
+                                <div class="stat-label">Wishlist Items</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="stat-value" id="cart-items">0</div>
+                                <div class="stat-label">Cart Items</div>
+                            </div>
+                        </div>
+
+                        <h3 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 20px;">Recent Activity</h3>
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id">Welcome to eShop!</span>
+                            </div>
+                            <div class="order-details">
+                                <span>Start shopping to see your activity here</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Profile Section -->
+                    <section id="profile" class="profile-section">
+                        <h2 class="section-title">Profile Information</h2>
+                        
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <div class="info-label">Full Name</div>
+                                <div class="info-value" id="profile-name">-</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Email Address</div>
+                                <div class="info-value" id="profile-email">-</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Phone Number</div>
+                                <div class="info-value">Not provided</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Member Since</div>
+                                <div class="info-value" id="member-since">-</div>
+                            </div>
+                        </div>
+
+                        <button class="btn-edit" onclick="alert('Edit profile feature coming soon!')">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </section>
+
+                    <!-- Orders Section -->
+                    <section id="orders" class="profile-section">
+                        <h2 class="section-title">My Orders</h2>
+                        
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id">No orders yet</span>
+                            </div>
+                            <div class="order-details">
+                                <span>You haven't placed any orders yet. Start shopping!</span>
+                            </div>
+                        </div>
+
+                        <a href="products.html" class="btn-edit">
+                            <i class="fas fa-shopping-bag"></i> Start Shopping
+                        </a>
+                    </section>
+
+                    <!-- Settings Section -->
+                    <section id="settings" class="profile-section">
+                        <h2 class="section-title">Account Settings</h2>
+                        
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id"><i class="fas fa-shield-alt"></i> Security</span>
+                            </div>
+                            <div class="order-details">
+                                <span>Change your password and security settings</span>
+                            </div>
+                            <button class="btn-edit" style="margin-top: 15px;" onclick="alert('Change password feature coming soon!')">
+                                Change Password
+                            </button>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id"><i class="fas fa-bell"></i> Notifications</span>
+                            </div>
+                            <div class="order-details">
+                                <span>Manage your email and push notifications</span>
+                            </div>
+                            <button class="btn-edit" style="margin-top: 15px;" onclick="alert('Notification settings coming soon!')">
+                                Manage Notifications
+                            </button>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id"><i class="fas fa-map-marker-alt"></i> Addresses</span>
+                            </div>
+                            <div class="order-details">
+                                <span>Manage your shipping addresses</span>
+                            </div>
+                            <button class="btn-edit" style="margin-top: 15px;" onclick="alert('Address management coming soon!')">
+                                Manage Addresses
+                            </button>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 class="footer-title">eShop</h3>
+                        <p class="footer-text">Your trusted online shopping destination.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 eShop. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/cart.js"></script>
+    <script src="js/user-session.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        // Check if user is logged in
+        const currentUser = sessionStorage.getItem('currentUser');
+        if (!currentUser) {
+            window.location.href = 'login-vibrant.html';
+        }
+
+        // Load user data
+        function loadUserData() {
+            if (currentUser) {
+                const userData = JSON.parse(currentUser);
+                document.getElementById('welcome-message').textContent = `Welcome back, ${userData.name}!`;
+                document.getElementById('profile-name').textContent = userData.name;
+                document.getElementById('profile-email').textContent = userData.email;
+                
+                // Set member since date
+                const memberDate = new Date().toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                document.getElementById('member-since').textContent = memberDate;
+            }
+        }
+
+        // Update dashboard stats
+        function updateStats() {
+            // Update cart count
+            if (window.cart) {
+                document.getElementById('cart-items').textContent = window.cart.getCount();
+            }
+
+            // Update wishlist count
+            const wishlist = localStorage.getItem('wishlist');
+            if (wishlist) {
+                const items = JSON.parse(wishlist);
+                document.getElementById('wishlist-items').textContent = items.length;
+            }
+
+            // Update orders count (placeholder)
+            document.getElementById('total-orders').textContent = '0';
+        }
+
+        // Menu navigation
+        const menuLinks = document.querySelectorAll('.account-menu-link[data-section]');
+        const sections = document.querySelectorAll('.profile-section');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+
+                // Update active states
+                menuLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Show selected section
+                sections.forEach(s => s.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('currentUser');
+                window.location.href = 'landing.html';
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+            setTimeout(updateStats, 500);
+        });
+    </script>
+</body>
+</html>

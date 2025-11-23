@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about eShop - Your trusted online shopping destination">
+    <title>About Us - eCommerce Store</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .about-content {
+            padding: 60px 0;
+        }
+        
+        .about-section {
+            margin-bottom: 60px;
+        }
+        
+        .about-section h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+        
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .value-card p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .team-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <p class="header-info">Welcome to our eCommerce store!</p>
+                    <div class="header-links">
+                        <a href="#" class="header-link">Track Order</a>
+                        <a href="#" class="header-link">Help</a>
+                        <a href="#" class="header-link">Language: EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>eShop</h1>
+                        </a>
+                    </div>
+
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search for products...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <div class="header-actions">
+                        <a href="account.html" class="header-action">
+                            <i class="far fa-user"></i>
+                            <span>Account</span>
+                        </a>
+                        <a href="wishlist.html" class="header-action">
+                            <i class="far fa-heart"></i>
+                            <span>Wishlist</span>
+                            <span class="badge">0</span>
+                        </a>
+                        <a href="cart.html" class="header-action">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Cart</span>
+                            <span class="badge">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Categories <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Home & Garden</a></li>
+                            <li><a href="#">Sports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About eShop</h1>
+            <p>We're dedicated to providing you with the best online shopping experience, offering quality products at competitive prices with exceptional customer service.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="about-content">
+        <div class="container">
+            <!-- Our Story -->
+            <div class="about-section">
+                <h2>Our Story</h2>
+                <p>Founded in 2020, eShop has grown from a small startup to one of the most trusted online retailers. Our journey began with a simple mission: to make quality products accessible to everyone, everywhere.</p>
+                <p>Today, we serve millions of customers worldwide, offering a diverse range of products from electronics to fashion, home goods, and more. Our commitment to excellence and customer satisfaction has been the driving force behind our success.</p>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>At eShop, our mission is to revolutionize online shopping by providing an unparalleled customer experience. We strive to offer the best selection of products, competitive prices, and exceptional service that goes beyond expectations.</p>
+                <p>We believe in building lasting relationships with our customers through trust, transparency, and continuous innovation in the e-commerce space.</p>
+            </div>
+
+            <!-- Our Values -->
+            <div class="about-section">
+                <h2>Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Customer First</h3>
+                        <p>Our customers are at the heart of everything we do. We're committed to exceeding expectations.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Quality Assurance</h3>
+                        <p>We carefully curate our products to ensure the highest quality and value for our customers.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Innovation</h3>
+                        <p>We continuously improve our platform and services to provide the best shopping experience.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Integrity</h3>
+                        <p>We conduct our business with honesty, transparency, and ethical practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Statistics Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="about-section">
+                <h2 style="text-align: center;">Our Achievements</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Countries Served</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 class="footer-title">eShop</h3>
+                        <p class="footer-text">
+                            Your trusted online shopping destination for quality products at competitive prices.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="return-policy.html">Return Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Customer Service</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Home & Garden</a></li>
+                            <li><a href="#">Sports & Outdoors</a></li>
+                            <li><a href="#">Beauty & Health</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Newsletter</h4>
+                        <p class="footer-text">Subscribe to get special offers and updates</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                        <div class="payment-methods">
+                            <h5>We Accept</h5>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-paypal"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 eShop. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

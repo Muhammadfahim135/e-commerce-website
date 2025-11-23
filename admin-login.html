@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Login - eShop">
+    <title>Admin Login - eShop</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .admin-login-container {
+            width: 100%;
+            max-width: 450px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 50px 40px;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .admin-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .admin-icon i {
+            font-size: 40px;
+            color: white;
+        }
+
+        .admin-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .admin-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border-left: 4px solid #dc2626;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            color: #16a34a;
+            border-left: 4px solid #16a34a;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px 14px 48px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #94a3b8;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #667eea;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #667eea;
+        }
+
+        .security-note {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .security-note i {
+            color: #667eea;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-login-container">
+        <div class="admin-icon">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        
+        <h1 class="admin-title">Admin Access</h1>
+        <p class="admin-subtitle">Authorized Personnel Only</p>
+
+        <div id="alert" class="alert"></div>
+
+        <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+            <div class="form-group">
+                <label for="adminUsername">Username</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="adminUsername" required autocomplete="username">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="adminPassword">Password</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="adminPassword" required autocomplete="current-password">
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+            </div>
+
+            <button type="submit" class="login-btn">
+                <i class="fas fa-sign-in-alt"></i> Login to Admin Panel
+            </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="admin-setup.html" class="back-link" style="color: #667eea; font-weight: 600;">
+                <i class="fas fa-key"></i> Setup/Reset Password
+            </a>
+        </div>
+
+        <a href="home.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Store
+        </a>
+
+        <div class="security-note">
+            <i class="fas fa-info-circle"></i>
+            This area is restricted to administrators only. All login attempts are logged.
+        </div>
+    </div>
+
+    <script>
+        // Default admin credentials (used only if no custom password is set)
+        const DEFAULT_CREDENTIALS = {
+            username: 'admin',
+            password: 'admin123'
+        };
+
+        function getAdminCredentials() {
+            // Check if custom password exists in localStorage
+            const customCreds = localStorage.getItem('adminCredentials');
+            if (customCreds) {
+                return JSON.parse(customCreds);
+            }
+            // Return default credentials
+            return DEFAULT_CREDENTIALS;
+        }
+
+        function handleAdminLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('adminUsername').value.trim();
+            const password = document.getElementById('adminPassword').value;
+            const alert = document.getElementById('alert');
+            const ADMIN_CREDENTIALS = getAdminCredentials();
+
+            // Validate credentials
+            if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                // Set admin session
+                sessionStorage.setItem('adminAuthenticated', 'true');
+                sessionStorage.setItem('adminUsername', username);
+                sessionStorage.setItem('adminLoginTime', new Date().toISOString());
+
+                // Show success
+                showAlert('Login successful! Redirecting...', 'success');
+
+                // Redirect to admin panel
+                setTimeout(() => {
+                    window.location.href = 'admin-panel.html';
+                }, 1000);
+            } else {
+                showAlert('Invalid username or password. Please try again.', 'error');
+                
+                // Log failed attempt (in production, send to server)
+                console.warn('Failed admin login attempt:', {
+                    username: username,
+                    timestamp: new Date().toISOString()
+                });
+
+                // Suggest password setup if using default and it fails multiple times
+                const failedAttempts = parseInt(sessionStorage.getItem('failedLoginAttempts') || '0') + 1;
+                sessionStorage.setItem('failedLoginAttempts', failedAttempts.toString());
+                
+                if (failedAttempts >= 3) {
+                    setTimeout(() => {
+                        if (confirm('Having trouble logging in? Would you like to reset your password?')) {
+                            window.location.href = 'admin-setup.html';
+                        }
+                    }, 1000);
+                }
+            }
+        }
+
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert alert-${type}`;
+            alert.style.display = 'block';
+
+            if (type === 'error') {
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 4000);
+            }
+        }
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('adminPassword');
+            const toggleIcon = document.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Check if already logged in
+        if (sessionStorage.getItem('adminAuthenticated') === 'true') {
+            window.location.href = 'admin-panel.html';
+        }
+    </script>
+</body>
+</html>

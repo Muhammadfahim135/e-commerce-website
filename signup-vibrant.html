@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up for eShop - Join the future of shopping">
+    <title>Sign Up - eShop | Join Now</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/auth-professional.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <!-- Left Side - Vibrant Branding -->
+            <div class="auth-branding">
+                <div class="brand-sidebar">
+                    <a href="home.html" class="brand-logo">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>eShop</span>
+                    </a>
+                    
+                    <h2 class="branding-title">Join the Future of Shopping!</h2>
+                    <p class="branding-text">Create your account and unlock exclusive deals, personalized recommendations, and a seamless shopping experience.</p>
+                    
+                    <div class="branding-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free Forever Account</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tag"></i>
+                            <span>Exclusive Member Deals</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-truck-fast"></i>
+                            <span>Fast & Free Delivery</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-star"></i>
+                            <span>Earn Reward Points</span>
+                        </div>
+                    </div>
+                    
+                    <div class="branding-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500K+</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.9★</span>
+                            <span class="stat-label">User Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Signup Form -->
+            <div class="auth-form-container">
+                <div class="auth-form-wrapper">
+                    <div class="form-header">
+                        <h1 class="form-title">Create Account</h1>
+                        <p class="form-subtitle">Start your shopping journey in seconds</p>
+                    </div>
+
+                    <form class="auth-form" id="signupForm">
+                        <!-- Full Name Field -->
+                        <div class="form-group">
+                            <label for="signupName" class="form-label">
+                                <i class="fas fa-user"></i>
+                                Full Name
+                            </label>
+                            <input 
+                                type="text" 
+                                id="signupName" 
+                                name="name" 
+                                class="form-input" 
+                                placeholder="Enter your full name"
+                                required
+                                autocomplete="name"
+                            >
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="signupEmail" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input 
+                                type="email" 
+                                id="signupEmail" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="Enter your email"
+                                required
+                                autocomplete="email"
+                            >
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="signupPassword" class="form-label">
+                                <i class="fas fa-lock"></i>
+                                Password
+                            </label>
+                            <div class="password-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="signupPassword" 
+                                    name="password" 
+                                    class="form-input" 
+                                    placeholder="Create a strong password"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="toggle-password" id="toggleSignupPassword">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" id="strengthFill"></div>
+                                </div>
+                                <span class="strength-text" id="strengthText">Password strength</span>
+                            </div>
+                            <div class="password-requirements">
+                                <strong>Password Requirements</strong>
+                                <ul>
+                                    <li>✓ At least 8 characters</li>
+                                    <li>✓ Uppercase letter (A-Z)</li>
+                                    <li>✓ Lowercase letter (a-z)</li>
+                                    <li>✓ Number (0-9)</li>
+                                </ul>
+                            </div>
+                            <span class="form-error" id="passwordError"></span>
+                        </div>
+
+                        <!-- Confirm Password Field -->
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">
+                                <i class="fas fa-shield-alt"></i>
+                                Confirm Password
+                            </label>
+                            <div class="password-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="confirmPassword" 
+                                    name="confirmPassword" 
+                                    class="form-input" 
+                                    placeholder="Confirm your password"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="form-error" id="confirmPasswordError"></span>
+                        </div>
+
+                        <!-- Terms & Conditions -->
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" id="acceptTerms" required>
+                                I agree to the <a href="terms.html" class="link-primary">Terms</a> and <a href="privacy-policy.html" class="link-primary">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">Create Account</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                        <!-- Social Signup -->
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i>
+                                Google
+                            </button>
+                            <button type="button" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebook
+                            </button>
+                        </div>
+
+                        <!-- Sign In Link -->
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="login-vibrant.html" class="link-primary">Sign In</a></p>
+                        </div>
+                    </form>
+                    
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>SSL Secured</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Protected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back to Welcome -->
+                <div class="back-to-home">
+                    <a href="landing.html">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Welcome
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

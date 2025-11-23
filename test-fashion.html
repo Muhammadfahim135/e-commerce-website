@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Category Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1 { color: #333; }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 10px 10px 0;
+        }
+        .btn:hover {
+            background: #e85d35;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-box">
+        <h1>🧪 Fashion Category Test</h1>
+        <p>Click the button below to test the fashion category filtering:</p>
+        
+        <a href="products.html?category=fashion" class="btn">👕 Open Fashion Category</a>
+        <a href="products.html?category=electronics" class="btn">📱 Open Electronics (Compare)</a>
+        <a href="products.html" class="btn">🌐 Open All Products</a>
+    </div>
+
+    <div class="test-box">
+        <h2>What Should Happen:</h2>
+        <ol>
+            <li>Click "Open Fashion Category" button</li>
+            <li>Products page should load</li>
+            <li>Should show ONLY fashion products (9 items):
+                <ul>
+                    <li>Denim Jacket</li>
+                    <li>Premium White Sneakers</li>
+                    <li>Classic Aviator Sunglasses</li>
+                    <li>Travel Backpack</li>
+                    <li>Luxury Analog Watch</li>
+                    <li>Genuine Leather Belt</li>
+                    <li>Designer Leather Handbag</li>
+                    <li>Cashmere Winter Scarf</li>
+                    <li>Classic Red Running Shoes</li>
+                </ul>
+            </li>
+            <li>Page header should say "Fashion Products"</li>
+            <li>Dropdown should show "Fashion" selected</li>
+        </ol>
+    </div>
+
+    <div class="test-box">
+        <h2>🔍 Debug Instructions:</h2>
+        <div class="status warning">
+            <strong>If it's not working:</strong>
+            <ol>
+                <li>Open the page (click button above)</li>
+                <li>Press <kbd>F12</kbd> to open Developer Console</li>
+                <li>Look for these messages:</li>
+            </ol>
+            <pre>
+Products page initialized
+Category param: "fashion" normalized to: "fashion"
+Filtering by category: "fashion"
+Filtered to category: fashion, showing 9 products</pre>
+        </div>
+    </div>
+
+    <div class="test-box">
+        <h2>📊 Expected Results:</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr style="background: #f8f8f8; font-weight: bold;">
+                <td style="padding: 10px; border: 1px solid #ddd;">Category</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Product Count</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Status</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;">Fashion</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">9 products</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">✅ Should work</td>
+            </tr>
+            <tr style="background: #f8f8f8;">
+                <td style="padding: 10px; border: 1px solid #ddd;">Electronics</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">10 products</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">✅ Should work</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Track button clicks
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                console.log('🔗 Opening:', this.href);
+                console.log('📂 Category:', this.href.includes('category=') ? this.href.split('category=')[1] : 'all');
+            });
+        });
+    </script>
+</body>
+</html>
