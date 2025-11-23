@@ -1,0 +1,2 @@
+# e-commerce-website
+A fully responsive online shopping platform built with HTML, CSS &amp; JavaScript. Features: product catalog with smart filtering, real-time search, shopping cart, wishlist, user authentication, and Node.js/MongoDB backend. Clean UI/UX with 40+ products across 5 categories. Perfect for learning or building your own store! 
